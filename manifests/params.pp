@@ -7,6 +7,7 @@ class docker::params {
   $ensure                       = present
   $tcp_bind                     = undef
   $socket_bind                  = 'unix:///var/run/docker.sock'
+  $docker_subnet                = '10.4.2.0/24'
   $log_level                    = undef
   $selinux_enabled              = undef
   $socket_group                 = undef

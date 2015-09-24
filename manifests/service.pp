@@ -26,6 +26,7 @@ class docker::service (
   $service_name     = $docker::service_name,
   $tcp_bind         = $docker::tcp_bind,
   $socket_bind      = $docker::socket_bind,
+  $docker_subnet    = $docker::docker_subnet,
   $log_level        = $docker::log_level,
   $selinux_enabled  = $docker::selinux_enabled,
   $socket_group     = $docker::socket_group,

@@ -77,6 +77,20 @@ describe 'the Puppet Docker module' do
         apply_manifest(pp, :catch_changes => true) unless fact('selinux') == 'true'
       end
 
+    context 'add subnet to docker0' do
+      let(:pp) {"
+        class { 'docker':
+         docker_subnet => '10.4.2.0/24',
+        }
+      "}
+
+      it 'should run successfully' do
+        apply_manifest(pp, :catch_failures => true)
+      end
+
+      it 'should run idempotently' do
+        apply_manifest(pp, :catch_changes => true) unless fact('selinux') == 'true'
+      end
       # A sleep to give docker time to execute properly
       sleep 4
 

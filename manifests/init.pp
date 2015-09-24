@@ -152,6 +152,7 @@ class docker(
   $prerequired_packages        = $docker::params::prerequired_packages,
   $tcp_bind                    = $docker::params::tcp_bind,
   $socket_bind                 = $docker::params::socket_bind,
+  $docker_subnet               = $docker::params::docker_subnet,
   $log_level                   = $docker::params::log_level,
   $selinux_enabled             = $docker::params::selinux_enabled,
   $use_upstream_package_source = $docker::params::use_upstream_package_source,
